@@ -3,7 +3,7 @@ import Link from 'next/link'
 import React, { useState } from 'react'
 import { AiOutlineBars, AiOutlineClose, AiOutlineMail } from 'react-icons/ai';
 import { FaLinkedinIn, FaGithub } from 'react-icons/fa';
-import {FiFacebook } from 'react-icons/fi';
+import { FiFacebook } from 'react-icons/fi';
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
