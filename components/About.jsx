@@ -7,7 +7,7 @@ const About = () => {
                 <div className="col-span-2">
                     <p className='uppercase  text-2xl tracking-widest text-blue-300'>about</p>
                     <h2 className='py-2 '>Who I A'm</h2>
-                    <p className='py-2 text-gray-600'>// I am not your normal developer </p>
+                    <p className='py-2 text-gray-600'>// I am not your normal developer-- </p>
 
                     <p className='py-2 text-gray-600'>I’m Zohirul Islam from Dhaka in Bangladesh. As a professional Front-End Web Developer. I have been working as a Web Developer over the last 2 years. Basically I’m working Web Design & Development, Responsive Design .Now I’m studying Msc honours (Department of Mathematics) at National University of Bangladesh</p>
 
