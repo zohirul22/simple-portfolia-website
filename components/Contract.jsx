@@ -5,7 +5,7 @@ import { FiFacebook } from 'react-icons/fi';
 
 const Contract = () => {
     return (
-        <div className='w-full h-screen mx-auto'>
+        <div id='contract'  className='w-full h-screen mx-auto'>
             <div className="max-w-[1240px] mx-auto   py-16">
                 <h1 className=' uppercase  text-2xl tracking-widest text-blue-300 px-10 md:ml-20'>Contract</h1>
                 <h2 className='py-3 text-2xl text-gray-600 px-10 md:ml-20'>Get In Touch</h2>

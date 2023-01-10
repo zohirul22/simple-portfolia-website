@@ -1,46 +1,64 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { AiOutlineBars, AiOutlineClose } from 'react-icons/ai';
 import SocialLogin from '../hooks/socialLogin'
 
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
+  const [shadow, setShadow] = useState(false);
+
 
   const handelNavbar = () => {
     setNav(!nav)
   }
 
+  useEffect(() => {
+    const handelShadow = () => {
+      if (window.scrollY >= 90){
+        setShadow(true);
+      } 
+      else {
+        setShadow(false);
+      }
+    };
+    window.addEventListener('scroll', handelShadow);
+  }, []);
+
+
+ 
   return (
-    <div className='fluid w-full shadow-xl px-2 z-[100]'>
+    <div className={shadow ? ' w-full shadow-xl px-2 z-[100] fixed' : 'fluid w-full  px-2 z-[100] fixed'}>
 
       {/*-------------------- menu full screen-------------- */}
       <div className="flex justify-between items-center w-full px-2 2xl:px-16">
         {/*----------------------- logo--------------------- */}
-        <Image src="/../public/asserts/Mynet_logo.jpg"
-          alt=""
-          width='125'
-          height='50'
-        />
+        <Link href='/#home'>
+          <Image src="/../public/asserts/Mynet_logo.jpg"
+            alt=""
+            width='125'
+            height='50'
+          />
+        </Link>
         {/*----------------------- logo-------------------- */}
         {/*------------------- menu items------------------ */}
         <div>
           <ul className='hidden md:flex'>
             <Link href='/'>
-              <li className='ml-10 text-sm uppercase hover:border-b'>Home</li>
+              <li className='ml-10 text-sm uppercase '>Home</li>
             </Link>
-            <Link href='/'>
-              <li className='ml-10 text-sm uppercase hover:border-b'>About</li>
+            <Link href='/#about'>
+              <li className='ml-10 text-sm uppercase '>About</li>
             </Link>
-            <Link href='/'>
-              <li className='ml-10 text-sm uppercase hover:border-b'>Skills</li>
+            <Link href='/#skills'>
+              <li className='ml-10 text-sm uppercase '>Skills</li>
             </Link>
-            <Link href='/'>
-              <li className='ml-10 text-sm uppercase hover:border-b'>Projects</li>
+            <Link href='/#project'>
+              <li className='ml-10 text-sm uppercase '>Projects</li>
             </Link>
-            <Link href='/'>
-              <li className='ml-10 text-sm uppercase hover:border-b'>Contract</li>
+            <Link href='/#contract'>
+              <li className='ml-10 text-sm uppercase '>Contract</li>
             </Link>
           </ul>
           {/*------------------ menu items----------------- */}
@@ -64,11 +82,13 @@ const Navbar = () => {
           <div >
             {/*-------------------- logo------------------ */}
             <div className="flex w-full items-center  justify-between">
-              <Image src="/../public/asserts/Mynet_logo.jpg"
+            <Link  href='/'>
+            <Image onClick={()=>setNav(false)}  src="/../public/asserts/Mynet_logo.jpg"
                 alt=""
                 width='125'
                 height='50'
               />
+            </Link>
               {/*-------------------- logo----------------- */}
 
               {/*-------------- React Icon----------------- */}
@@ -77,10 +97,7 @@ const Navbar = () => {
               </div>
               {/*---------------- React Icon-------------- */}
             </div>
-
-
           </div>
-
           <div className='border-b border-gray-300 my-4'>
 
           </div>
@@ -88,19 +105,20 @@ const Navbar = () => {
             {/*----------------- menu items---------------- */}
             <ul>
               <Link href='/'>
-                <li className='py-4 text-sm'>Home</li>
+                <li onClick={()=>setNav(false)} className='py-4 text-sm'>Home</li>
               </Link>
-              <Link href='/'>
-                <li className='py-4 text-sm'>About</li>
+              <Link href='/#about'>
+                <li onClick={()=>setNav(false)}  className='py-4 text-sm'>About</li>
               </Link>
-              <Link href='/'>
-                <li className='py-4 text-sm'>Skills</li>
+              <Link href='/#skills'>
+                <li onClick={()=>setNav(false)}  className='py-4 text-sm'>Skills</li>
               </Link>
-              <Link href='/'>
-                <li className='py-4 text-sm'>Projects</li>
+              <Link href='/#project'>
+                <li onClick={()=>setNav(false)}  className='py-4 text-sm'>Project</li>
               </Link>
-              <Link href='/'>
-                <li className='py-4 text-sm'>Contract</li>
+
+              <Link href='/#contract'>
+                <li onClick={()=>setNav(false)}  className='py-4 text-sm'>Contract</li>
               </Link>
             </ul>
             {/*------------------ menu items------------------ */}
@@ -108,7 +126,7 @@ const Navbar = () => {
             <div className="pt-10">
               <p className='uppercase text-lime-500'>lets connect</p>
               <div className="flex items-center justify-between my-4 w-full sm:w-[85%]">
-              <SocialLogin/>
+                <SocialLogin />
                 {/*--------------------Social icons---------------- */}
               </div>
             </div>
