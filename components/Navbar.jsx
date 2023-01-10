@@ -1,9 +1,9 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import React, { useState } from 'react'
-import { AiOutlineBars, AiOutlineClose, AiOutlineMail } from 'react-icons/ai';
-import { FaLinkedinIn, FaGithub } from 'react-icons/fa';
-import { FiFacebook } from 'react-icons/fi';
+import { AiOutlineBars, AiOutlineClose } from 'react-icons/ai';
+import SocialLogin from '../hooks/socialLogin'
+
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
@@ -108,18 +108,7 @@ const Navbar = () => {
             <div className="pt-10">
               <p className='uppercase text-lime-500'>lets connect</p>
               <div className="flex items-center justify-between my-4 w-full sm:w-[85%]">
-                <div className="rounded-full shadow-lg shadow-gray-400 p-4 cursor-pointer hover:scale-105 hover:bg-slate-600 hover:text-yellow-200 ease-in duration-300">
-                  <FaLinkedinIn />
-                </div>
-                <div className="rounded-full shadow-lg shadow-gray-400 p-4 cursor-pointer hover:scale-105 hover:bg-slate-600 hover:text-yellow-200 ease-in duration-300">
-                  <FaGithub />
-                </div>
-                <div className="rounded-full shadow-lg shadow-gray-400 p-4 cursor-pointer hover:scale-105 hover:bg-slate-600 hover:text-yellow-200 ease-in duration-300">
-                  <AiOutlineMail />
-                </div>
-                <div className="rounded-full shadow-lg shadow-gray-400 p-4 cursor-pointer hover:scale-105 hover:bg-slate-600 hover:text-yellow-200 ease-in duration-300">
-                  <FiFacebook />
-                </div>
+              <SocialLogin/>
                 {/*--------------------Social icons---------------- */}
               </div>
             </div>

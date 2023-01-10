@@ -14,7 +14,7 @@ const Projects = () => {
         <div className='w-full'>
             <div className="max-w-[1240px] mx-auto  px-2 py-16">
                 <h2 className=' uppercase  text-2xl tracking-widest text-blue-300 px-10' >Projects</h2>
-                <p className='py-3 text-gray-600 px-10' >What I've Build</p>
+                <h2 className='py-3 text-gray-600 px-10 mb-2' >What I've Build</h2>
                 <div className="grid md:grid-cols-3 gap-8">
                     <ProjectDetails backgroundImg={project_1} />
                     <ProjectDetails backgroundImg={project_2} />
