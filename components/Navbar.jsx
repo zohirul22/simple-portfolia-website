@@ -29,7 +29,7 @@ const Navbar = () => {
 
  
   return (
-    <div className={shadow ? ' w-full shadow-xl px-2 z-[100] fixed' : 'fluid w-full  px-2 z-[100] fixed'}>
+    <div className={shadow ? ' w-full shadow-xl px-2 z-[100] ' : 'fluid w-full  px-2 z-[100] '}>
 
       {/*-------------------- menu full screen-------------- */}
       <div className="flex justify-between items-center w-full px-2 2xl:px-16">
